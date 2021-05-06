@@ -1,0 +1,131 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 10px
+  font-family: 'Poppins', sans-serif; // 'Montserrat', 'Roboto';
+}
+
+:root {
+  --color-primary: #2168ad;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-color: #f4f4f4;
+  padding: 20px;
+
+  .money-img {
+    width: 150px;
+  }
+
+  h1 {
+    color: var(--color-primary);
+  }
+
+  p {
+    max-width: 30rem;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .container {
+    .currency {
+      padding: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      select {
+        padding: 8px 20px 9px 10px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: 1px solid #dedede;
+        font-size: 1.6rem;
+        background: transparent;
+        outline: none;
+        // add down arrow on select element
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+        background-position: right 10px top 50%, 0, 0;
+        background-size: 12px auto, 100%;
+        background-repeat: no-repeat;
+        border: 0.5px solid var(--color-primary);
+      }
+
+      input {
+        // border: none;
+        background: transparent;
+        font-size: 30px;
+        text-align: right;
+        outline: none;
+        border: 0.5px dashed var(--color-primary);
+      }
+    }
+  }
+
+  .swap-rate-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn {
+      color: #fff;
+      background-color: var(--color-primary);
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      padding: 5px 18px;
+      outline: none;
+      position: relative;
+    }
+
+    .btn::after {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f0dd';
+      position: absolute;
+      right: 6px;
+      bottom: 2px;
+    }
+    .btn::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f0d8';
+      position: absolute;
+      right: 6px;
+      top: 2px;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .rate {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      .currency {
+        input {
+          width: 200px;
+        }
+      }
+    }
+  }
+}
