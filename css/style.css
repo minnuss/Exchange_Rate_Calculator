@@ -63,6 +63,7 @@ body .container .currency select {
 }
 
 body .container .currency input {
+  width: 300px;
   background: transparent;
   font-size: 30px;
   text-align: right;
